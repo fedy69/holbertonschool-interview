@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""checking all locked boxes"""
+"""checking all locked boxes """
 
 
 def canUnlockAll(boxes):
