@@ -23,7 +23,7 @@ listint_t *insert_node(listint_t **head, int number)
         free(node);
         return(NULL);
     }
-    if(head == NULL ||!number)
+    if(head == NULL || number <= 0)
     {
         return NULL;
     }
@@ -33,7 +33,7 @@ listint_t *insert_node(listint_t **head, int number)
         return(*head);
     }
     p = *head;
-    if(p->n > number)
+    if(p->n >= number)
     {
         node->next = p;
         *head = node;
