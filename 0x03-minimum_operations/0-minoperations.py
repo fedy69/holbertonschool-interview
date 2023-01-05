@@ -3,10 +3,14 @@
 
 
 def minOperations(n: int) -> int:
-    if n == 0:
+    if n <= 0:
         return 0
-    operations = 0
-    while n & (n - 1) != 0:
-        n -= n & -n
-        operations += 1
-    return operations + (n.bit_length() - 1)
+    count = []
+    i = 2
+    while n > 1:
+        while n % i == 0:
+            count.append(i)
+            n = n / i
+        i += 1
+
+    return sum(count)
